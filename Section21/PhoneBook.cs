@@ -58,5 +58,10 @@ namespace Section21
             this.phone_book_tableBindingSource.Filter =
                 $"birth_date >= '{from}'  AND birth_date <= '{to}'";
         }
+
+        private void ExitToolStripButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

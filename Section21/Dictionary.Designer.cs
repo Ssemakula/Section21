@@ -34,10 +34,6 @@
             this.searchBbutton = new System.Windows.Forms.Button();
             this.searchLabel = new System.Windows.Forms.Label();
             this.searchTextBox = new System.Windows.Forms.TextBox();
-            this.my_dict = new Section21.Data.my_dict();
-            this.en_word_listBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.en_word_listTableAdapter = new Section21.Data.my_dictTableAdapters.en_word_listTableAdapter();
-            this.tableAdapterManager = new Section21.Data.my_dictTableAdapters.TableAdapterManager();
             this.en_word_listBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -52,17 +48,22 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.en_word_listBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.en_word_listDataGridView = new System.Windows.Forms.DataGridView();
+            this.exitButton = new System.Windows.Forms.Button();
+            this.searchComboBox = new System.Windows.Forms.ComboBox();
+            this.en_word_listBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.my_dict = new Section21.Data.my_dict();
+            this.en_word_listTableAdapter = new Section21.Data.my_dictTableAdapters.en_word_listTableAdapter();
+            this.tableAdapterManager = new Section21.Data.my_dictTableAdapters.TableAdapterManager();
+            this.definitionTextBox = new System.Windows.Forms.TextBox();
             this.idColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wordColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wordtypeColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.definitionColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.exitButton = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.my_dict)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.en_word_listBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.en_word_listBindingNavigator)).BeginInit();
             this.en_word_listBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.en_word_listDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.en_word_listBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.my_dict)).BeginInit();
             this.SuspendLayout();
             // 
             // searchBbutton
@@ -91,27 +92,6 @@
             this.searchTextBox.Size = new System.Drawing.Size(119, 20);
             this.searchTextBox.TabIndex = 3;
             // 
-            // my_dict
-            // 
-            this.my_dict.DataSetName = "my_dict";
-            this.my_dict.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // en_word_listBindingSource
-            // 
-            this.en_word_listBindingSource.DataMember = "en_word_list";
-            this.en_word_listBindingSource.DataSource = this.my_dict;
-            // 
-            // en_word_listTableAdapter
-            // 
-            this.en_word_listTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.en_word_listTableAdapter = this.en_word_listTableAdapter;
-            this.tableAdapterManager.phone_book_tableTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = Section21.Data.my_dictTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
             // en_word_listBindingNavigator
             // 
             this.en_word_listBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -132,14 +112,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.en_word_listBindingNavigatorSaveItem});
-            this.en_word_listBindingNavigator.Location = new System.Drawing.Point(0, 425);
+            this.en_word_listBindingNavigator.Location = new System.Drawing.Point(0, 536);
             this.en_word_listBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.en_word_listBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.en_word_listBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.en_word_listBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.en_word_listBindingNavigator.Name = "en_word_listBindingNavigator";
             this.en_word_listBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.en_word_listBindingNavigator.Size = new System.Drawing.Size(800, 25);
+            this.en_word_listBindingNavigator.Size = new System.Drawing.Size(599, 25);
             this.en_word_listBindingNavigator.TabIndex = 4;
             this.en_word_listBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -195,6 +175,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Position";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -239,9 +220,10 @@
             // 
             // en_word_listDataGridView
             // 
+            this.en_word_listDataGridView.AllowUserToAddRows = false;
+            this.en_word_listDataGridView.AllowUserToDeleteRows = false;
             this.en_word_listDataGridView.AllowUserToOrderColumns = true;
             this.en_word_listDataGridView.AutoGenerateColumns = false;
-            this.en_word_listDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.en_word_listDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.en_word_listDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idColumn,
@@ -251,8 +233,66 @@
             this.en_word_listDataGridView.DataSource = this.en_word_listBindingSource;
             this.en_word_listDataGridView.Location = new System.Drawing.Point(20, 48);
             this.en_word_listDataGridView.Name = "en_word_listDataGridView";
-            this.en_word_listDataGridView.Size = new System.Drawing.Size(768, 368);
+            this.en_word_listDataGridView.ReadOnly = true;
+            this.en_word_listDataGridView.Size = new System.Drawing.Size(560, 348);
             this.en_word_listDataGridView.TabIndex = 4;
+            // 
+            // exitButton
+            // 
+            this.exitButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.exitButton.Location = new System.Drawing.Point(507, 19);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(75, 23);
+            this.exitButton.TabIndex = 5;
+            this.exitButton.Text = "Close";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.ExitButton_Click);
+            // 
+            // searchComboBox
+            // 
+            this.searchComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchComboBox.FormattingEnabled = true;
+            this.searchComboBox.Items.AddRange(new object[] {
+            "Equals",
+            "Contains",
+            "Starts with",
+            "Ends with"});
+            this.searchComboBox.Location = new System.Drawing.Point(207, 20);
+            this.searchComboBox.Name = "searchComboBox";
+            this.searchComboBox.Size = new System.Drawing.Size(121, 21);
+            this.searchComboBox.TabIndex = 6;
+            // 
+            // en_word_listBindingSource
+            // 
+            this.en_word_listBindingSource.DataMember = "en_word_list";
+            this.en_word_listBindingSource.DataSource = this.my_dict;
+            // 
+            // my_dict
+            // 
+            this.my_dict.DataSetName = "my_dict";
+            this.my_dict.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // en_word_listTableAdapter
+            // 
+            this.en_word_listTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.en_word_listTableAdapter = this.en_word_listTableAdapter;
+            this.tableAdapterManager.phone_book_tableTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = Section21.Data.my_dictTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // definitionTextBox
+            // 
+            this.definitionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.en_word_listBindingSource, "definition", true));
+            this.definitionTextBox.Location = new System.Drawing.Point(20, 402);
+            this.definitionTextBox.Multiline = true;
+            this.definitionTextBox.Name = "definitionTextBox";
+            this.definitionTextBox.ReadOnly = true;
+            this.definitionTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.definitionTextBox.Size = new System.Drawing.Size(560, 131);
+            this.definitionTextBox.TabIndex = 8;
             // 
             // idColumn
             // 
@@ -265,14 +305,14 @@
             // wordColumn
             // 
             this.wordColumn.DataPropertyName = "word";
-            this.wordColumn.HeaderText = "word";
+            this.wordColumn.HeaderText = "Word";
             this.wordColumn.Name = "wordColumn";
             this.wordColumn.Width = 150;
             // 
             // wordtypeColumn
             // 
             this.wordtypeColumn.DataPropertyName = "wordtype";
-            this.wordtypeColumn.HeaderText = "wordtype";
+            this.wordtypeColumn.HeaderText = "Word Type";
             this.wordtypeColumn.Name = "wordtypeColumn";
             this.wordtypeColumn.Width = 150;
             // 
@@ -281,40 +321,18 @@
             this.definitionColumn.DataPropertyName = "definition";
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.definitionColumn.DefaultCellStyle = dataGridViewCellStyle2;
-            this.definitionColumn.HeaderText = "definition";
+            this.definitionColumn.HeaderText = "Definition";
             this.definitionColumn.Name = "definitionColumn";
-            this.definitionColumn.Width = 400;
-            // 
-            // exitButton
-            // 
-            this.exitButton.Location = new System.Drawing.Point(713, 19);
-            this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(75, 23);
-            this.exitButton.TabIndex = 5;
-            this.exitButton.Text = "Exit";
-            this.exitButton.UseVisualStyleBackColor = true;
-            this.exitButton.Click += new System.EventHandler(this.ExitButton_Click);
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Equals",
-            "Contains",
-            "Starts with",
-            "Ends with"});
-            this.comboBox1.Location = new System.Drawing.Point(207, 20);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 6;
+            this.definitionColumn.ReadOnly = true;
+            this.definitionColumn.Width = 200;
             // 
             // Dictionary
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
+            this.ClientSize = new System.Drawing.Size(599, 561);
+            this.Controls.Add(this.definitionTextBox);
+            this.Controls.Add(this.searchComboBox);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.en_word_listDataGridView);
             this.Controls.Add(this.en_word_listBindingNavigator);
@@ -326,12 +344,12 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Dictionary";
             this.Load += new System.EventHandler(this.Start_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.my_dict)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.en_word_listBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.en_word_listBindingNavigator)).EndInit();
             this.en_word_listBindingNavigator.ResumeLayout(false);
             this.en_word_listBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.en_word_listDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.en_word_listBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.my_dict)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -359,12 +377,13 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton en_word_listBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView en_word_listDataGridView;
+        private System.Windows.Forms.Button exitButton;
+        private System.Windows.Forms.ComboBox searchComboBox;
+        private System.Windows.Forms.TextBox definitionTextBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn idColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn wordColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn wordtypeColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn definitionColumn;
-        private System.Windows.Forms.Button exitButton;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
 
